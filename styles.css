@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header h1 i {
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #4a5568;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+nav a:hover, nav a.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.dashboard {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.dashboard p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.progress-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.progress-container h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.quick-access {
+    margin-bottom: 2rem;
+}
+
+.quick-access h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.lesson-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.lesson-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.card-content h4 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.learning-path {
+    margin-top: 2rem;
+}
+
+.learning-path h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.path-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.path-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.path-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.path-step.completed {
+    border: 2px solid #48bb78;
+}
+
+.path-step.completed .step-number {
+    background: #48bb78;
+}
+
+.step-number {
+    background: #e2e8f0;
+    color: #4a5568;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.step-content h4 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.step-content p {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+footer {
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 10px 10px 0 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .path-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .lessons-container {
+        padding: 1rem;
+    }
+
+    .lesson-section {
+        margin-bottom: 2rem;
+    }
+
+    .lesson-content {
+        padding: 1rem;
+    }
+
+    .code-block {
+        font-size: 0.9rem;
+    }
+
+    .exercises-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .exercise-card {
+        padding: 1.5rem;
+    }
+
+    .exercise-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.lessons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.lesson-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #667eea;
+}
+
+.lesson-section h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lesson-section h3 i {
+    color: #667eea;
+}
+
+.lesson-content p {
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.lesson-content h4 {
+    color: #2d3748;
+    margin: 2rem 0 1rem;
+    font-size: 1.2rem;
+}
+
+.code-block {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.code-block code {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #4a5568;
+}
+
+.code-header span {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.copy-btn:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+}
+
+.exercise-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.exercise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.explanation {
+    background: #edf2f7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    border-left: 4px solid #667eea;
+    display: none;
+}
+
+.explanation h4 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.explanation h4 i {
+    color: #667eea;
+}
+
+.explanation ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.explanation li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.explanation li:before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.exercises-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.exercise-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.exercise-header h3 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exercise-header h3 i {
+    color: #667eea;
+}
+
+.difficulty {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.difficulty.easy {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.difficulty.medium {
+    background: #fefcbf;
+    color: #744210;
+}
+
+.difficulty.hard {
+    background: #fed7d7;
+    color: #822727;
+}
+
+.exercise-content p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.exercise-content p strong {
+    color: #2d3748;
+}
+
+.lesson-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+    cursor: pointer;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
