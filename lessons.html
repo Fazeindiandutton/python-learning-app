@@ -62,11 +62,11 @@ print("Welcome to Python programming!")
 # This is a comment - ignored by Python</code></pre>
                         </div>
 
-                        <div class="exercise-btn" onclick="markLessonCompleted(1)">
-                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
-                        </div>
+                    <div class="exercise-btn" onclick="markQuizLesson(1)" id="exercise-btn-1">
+                        <i class="fas fa-check-circle"></i> Complete Quiz & Unlock Next Lesson
                     </div>
                 </div>
+            </div>
 
                 <div class="lesson-section">
                     <h3><i class="fas fa-variable"></i> Variables & Data Types</h3>
@@ -354,10 +354,69 @@ finally:
             });
         }
 
-        // Mark lesson completed
+        // Mark quiz lesson completed
         function markLessonCompleted(lessonId) {
             const app = new PythonLearningApp();
             app.markLessonCompleted(lessonId);
+            const button = document.getElementById(`exercise-btn-${lessonId}`);
+            if (button) {
+                button.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+                button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+                button.onclick = null;
+            }
+        }
+
+        // Mark quiz lesson completed via quiz
+        function markQuizLesson(lessonId) {
+            const app = new PythonLearningApp();
+            app.markLessonCompleted(lessonId);
+            const button = document.getElementById(`exercise-btn-${lessonId}`);
+            if (button) {
+                button.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+                button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+                button.onclick = null;
+            }
+            showSuccessNotification(`Perfect! Lesson ${lessonId} unlocked! You're on track for Lesson ${lessonId + 1}`);
+        }
+
+        // Mark exercise completed
+        function markExerciseCompleted(exerciseId) {
+            const app = new PythonLearningApp();
+            app.markExerciseCompleted(exerciseId);
+            const button = document.querySelector(`[data-exercise-id="${exerciseId}"]`);
+            if (button) {
+                button.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+                button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+                button.onclick = null;
+                button.style.cursor = 'default';
+            }
+        }
+
+        function showSuccessNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+                z-index: 2000;
+                animation: slideIn 0.3s ease;
+                font-weight: 500;
+            `;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
         }
 
         // Update path steps

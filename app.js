@@ -67,6 +67,28 @@ class PythonLearningApp {
         }
     }
 
+    // Mark quiz completed and automatically unlock next lesson
+    markQuizCompleted(lessonId) {
+        const allAnswersSelected = document.querySelectorAll('.quiz-question[data-lesson-id="' + lessonId + '"] .quiz-option.selected').length === 
+            document.querySelectorAll('.quiz-question[data-lesson-id="' + lessonId + '"] .quiz-option').length;
+        
+        if (!allAnswersSelected) {
+            this.showNotification('Please answer all quiz questions before submitting!', false, lessonId);
+            return;
+        }
+        
+        this.markLessonCompleted(lessonId);
+        
+        const quizScore = this.getQuizScore(lessonId);
+        if (quizScore >= 80) {
+            this.showNotification(`Excellent! Quiz completed (${quizScore}%) - Lesson unlocked! Ready for Lesson ${lessonId + 1}`, false, lessonId);
+        } else if (quizScore >= 50) {
+            this.showNotification(`Good effort! Quiz completed (${quizScore}%) - Lesson unlocked! Complete Lesson ${lessonId + 1} to improve your score`, false, lessonId);
+        } else {
+            this.showNotification(`Quiz completed (${quizScore}%) - Lesson unlocked! Review the material and retake the quiz`, false, lessonId);
+        }
+    }
+
     checkQuizAnswer(lessonId, questionId, selectedAnswer, correctAnswer) {
         const quizResult = {
             lessonId: lessonId,
@@ -279,11 +301,17 @@ class PythonLearningApp {
                 e.preventDefault();
                 const exerciseId = btn.getAttribute('data-exercise-id');
                 if (exerciseId) {
-                    this.markExerciseCompleted(exerciseId);
+                    this.markExerciseCompleted(parseInt(exerciseId));
                     const explanation = document.getElementById(`explanation-${exerciseId}`);
                     if (explanation) {
                         explanation.style.display = 'block';
                     }
+                    
+                    // Update button appearance to show completed
+                    btn.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+                    btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+                    btn.style.cursor = 'default';
+                    btn.classList.add('completed');
                 }
             });
         });
@@ -335,8 +363,7 @@ class PythonLearningApp {
         document.querySelectorAll('.check-answer-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const lessonId = parseInt(btn.getAttribute('data-lesson-id'));
-                this.markLessonCompleted(lessonId);
-                this.showNotification('Quiz completed! Lesson unlocked!', false, lessonId);
+                this.markQuizCompleted(lessonId);
             });
         });
 
