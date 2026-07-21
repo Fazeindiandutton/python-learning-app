@@ -1,0 +1,25 @@
+{
+  "name": "python-learning-app",
+  "version": "1.0.0",
+  "description": "A comprehensive Python learning platform with interactive lessons and exercises",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete' && echo 'Python Learning App is ready to deploy'",
+    "deploy": "gh-pages -d .",
+    "predeploy": "npm run build"
+  },
+  "keywords": [
+    "python",
+    "learning",
+    "education",
+    "programming",
+    "tutorial"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://fazeindiandutton.github.io/python-learning-app",
+  "browserslist": "> 0.25%, not dead",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
