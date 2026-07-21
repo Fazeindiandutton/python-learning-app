@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-python"></i> Python Learning App</h1>
+        <nav>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="lessons.html"><i class="fas fa-book"></i> Lessons</a>
+            <a href="exercises.html"><i class="fas fa-code"></i> Exercises</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Welcome to Your Python Learning Journey! 🎉</h2>
+            <p>Master Python programming from the ground up with interactive lessons and hands-on practice.</p>
+
+            <div class="progress-container">
+                <h3>Your Progress</h3>
+                <div class="progress-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="completed-lessons">0</div>
+                        <div class="stat-label">Lessons Completed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="exercises-completed">0</div>
+                        <div class="stat-label">Exercises Completed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="streak">0</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-access">
+                <h3>Continue Learning</h3>
+                <div class="lesson-cards" id="continue-learning">
+                    <div class="lesson-card">
+                        <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="card-content">
+                            <h4>Introduction to Python</h4>
+                            <p>Start your Python journey with basics</p>
+                            <a href="lessons.html#getting-started" class="card-btn">Start Lesson</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-path">
+                <h3>Python Learning Path</h3>
+                <div class="path-steps">
+                    <div class="path-step completed">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Getting Started</h4>
+                            <p>Python installation and basic concepts</p>
+                        </div>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Variables & Data Types</h4>
+                            <p>Understanding Python data structures</p>
+                        </div>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Control Flow</h4>
+                            <p>Conditionals and loops</p>
+                        </div>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Functions</h4>
+                            <p>Building reusable code</p>
+                        </div>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Objects & Classes</h4>
+                            <p>OOP concepts in Python</p>
+                        </div>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Libraries & Frameworks</h4>
+                            <p>Building powerful applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Python Learning App | Learn. Code. Create.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Lessons - Learning App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-python"></i> Python Learning App</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="lessons.html" class="active"><i class="fas fa-book"></i> Lessons</a>
+            <a href="exercises.html"><i class="fas fa-code"></i> Exercises</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Python Lessons 📚</h2>
+            
+            <div class="lessons-container">
+                <div class="lesson-section" id="getting-started">
+                    <h3><i class="fas fa-play-circle"></i> Getting Started with Python</h3>
+                    <div class="lesson-content">
+                        <p>Python is a powerful, high-level programming language known for its clean syntax and readability. It was created by Guido van Rossum and first released in 1991.</p>
+                        
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>macOS/Linux</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>brew install python3  # macOS
+# or
+sudo apt-get update && sudo apt-get install python3  # Ubuntu/Debian</code></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Windows</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>Download from: https://www.python.org/downloads/
+Run: py --version</code></pre>
+                        </div>
+
+                        <h4>Your First Python Program</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>main.py</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code># Hello World - Your first Python program
+print("Hello, World!")
+print("Welcome to Python programming!")
+
+# Comment example
+# This is a comment - ignored by Python</code></pre>
+                        </div>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(1)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3><i class="fas fa-variable"></i> Variables & Data Types</h3>
+                    <div class="lesson-content">
+                        <p>In Python, variables are created when you assign a value to them. There's no need to declare a variable type explicitly.</p>
+                        
+                        <h4>Creating Variables</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>name = "Alice"                    # String
+age = 25                          # Integer
+height = 5.8                       # Float
+has_dog = True                     # Boolean
+
+print(f"{name} is {age} years old")
+print(f"Height: {height} feet")</code></pre>
+                        </div>
+
+                        <h4>Data Types</h4>
+                        <ul>
+                            <li><strong>int</strong> - Integers (25, -3, 0)</li>
+                            <li><strong>float</strong> - Floating point numbers (3.14, -2.5)</li>
+                            <li><strong>str</strong> - Strings ("hello", 'world')</li>
+                            <li><strong>bool</strong> - Booleans (True, False)</li>
+                            <li><strong>list</strong> - Lists [1, 2, 3]</li>
+                            <li><strong>dict</strong> - Dictionaries {"key": "value"}</li>
+                            <li><strong>tuple</strong> - Tuples (1, 2, 3)</li>
+                            <li><strong>set</strong> - Sets {1, 2, 3}</li>
+                        </ul>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(2)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3><i class="fas fa-branch"></i> Control Flow</h3>
+                    <div class="lesson-content">
+                        <p>Control flow statements let you control the order in which your code executes.</p>
+                        
+                        <h4>Conditional Statements</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>age = 18
+
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")
+
+# Multiple conditions
+count = 5
+
+if count > 0:
+    print("Positive")
+elif count < 0:
+    print("Negative")
+else:
+    print("Zero")</code></pre>
+                        </div>
+
+                        <h4>Loops</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>While Loop</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>count = 5
+while count > 0:
+    print(f"Count: {count}")
+    count -= 1</code></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>For Loop</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+# Range loop
+for i in range(5):
+    print(f"Number: {i}")</code></pre>
+                        </div>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(3)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3><i class="fas fa-function"></i> Functions</h3>
+                    <div class="lesson-content">
+                        <p>Functions are reusable blocks of code that perform specific tasks.</p>
+                        
+                        <h4>Defining Functions</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>def greet_user(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+# Function call
+message = greet_user("Alice")
+message2 = greet_user("Bob", greeting="Hi")
+print(message)
+print(message2)
+
+# Function with return value
+
+def calculate_rectangle_area(width, height):
+    area = width * height
+    print(f"Area: {area}")
+    return area
+
+square_area = calculate_rectangle_area(5, 5)
+rectangle_area = calculate_rectangle_area(4, 6)</code></pre>
+                        </div>
+
+                        <h4>Docstrings</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>def add_numbers(a, b):
+    """
+    Add two numbers and return their sum.
+    
+    Parameters:
+    a (int/float): First number
+    b (int/float): Second number
+    
+    Returns:
+    int/float: The sum of a and b
+    """
+    return a + b</code></pre>
+                        </div>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(4)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3><i class="fas fa-object-group"></i> Objects & Classes</h3>
+                    <div class="lesson-content">
+                        <p>Python uses object-oriented programming (OOP) to organize code into classes and objects.</p>
+                        
+                        <h4>Creating Classes</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def greet(self):
+        return f"Hello, my name is {self.name}"
+    
+    def birthday(self):
+        self.age += 1
+        return f"Happy birthday! New age: {self.age}"
+
+# Creating objects
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+
+print(person1.greet())
+print(person2.greet())
+print(person1.birthday())
+print(person2.greet())</code></pre>
+                        </div>
+
+                        <h4>Built-in Methods</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>String Methods</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>text = "Hello World"
+print(text.upper())      # HELLO WORLD
+print(text.lower())      # hello world
+print(text.replace("World", "Python"))  # Hello Python
+print(text.split())      # ['Hello', 'World']</code></pre>
+                        </div>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(5)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Libraries & Frameworks</h3>
+                    <div class="lesson-content">
+                        <p>Python has an extensive ecosystem of libraries and frameworks for various purposes.</p>
+                        
+                        <h4>Popular Libraries</h4>
+                        <ul>
+                            <li><strong>Requests</strong> - HTTP requests and API calls</li>
+                            <li><strong>NumPy</strong> - Numerical computations</li>
+                            <li><strong>Pandas</strong> - Data analysis and manipulation</li>
+                            <li><strong>Matplotlib</strong> - Data visualization</li>
+                            <li><strong>Flask/Django</strong> - Web development</li>
+                            <li><strong>Beautiful Soup</strong> - HTML parsing</li>
+                            <li><strong>Tkinter</strong> - GUI development</li>
+                        </ul>
+
+                        <h4>Installing Packages</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>pip</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>pip install requests
+pip install numpy
+pip install pandas
+pip install matplotlib</code></pre>
+                        </div>
+
+                        <h4>Simple Example with Requests</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>import requests
+
+# Make a request to a website
+response = requests.get("https://api.github.com/users/python")
+print(f"Status code: {response.status_code}")
+print(f"User info: {response.json()}")
+
+# Error handling
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("This always runs")</code></pre>
+                        </div>
+
+                        <div class="exercise-btn" onclick="markLessonCompleted(6)">
+                            <i class="fas fa-check-circle"></i> Mark Lesson Completed
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Python Learning App | Learn. Code. Create.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.parentElement.nextElementSibling;
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        }
+
+        // Mark lesson completed
+        function markLessonCompleted(lessonId) {
+            const app = new PythonLearningApp();
+            app.markLessonCompleted(lessonId);
+        }
+
+        // Update path steps
+        function updatePathSteps() {
+            const app = new PythonLearningApp();
+            const steps = document.querySelectorAll('.path-step');
+            app.lessonsCompleted.forEach((lessonId, index) => {
+                if (steps[index]) {
+                    steps[index].classList.add('completed');
+                }
+            });
+        }
+
+        // Initialize path
+        document.addEventListener('DOMContentLoaded', () => {
+            new PythonLearningApp();
+            updatePathSteps();
+        });
+    </script>
+</body>
+</html>
